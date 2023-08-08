@@ -11,11 +11,13 @@ class IntegerListImplTest {
     @Test
     void testAdd_success() {
         //      входящие данные
+        addInArray();               //тут же проверка на расширение массива
         Integer integer = 55;
 //        ожидаемый результат
       Integer expected = integer;
 //        начало теста
         assertEquals(expected, integerList.add(integer));
+        clear();
     }
 
     @Test
@@ -47,7 +49,8 @@ class IntegerListImplTest {
     void contains_success() {
 //            входящие данные
         addInArray();
-        Integer integer = 100;
+        integerList.add(125);
+        Integer integer = 125;
 //        ожидаемый результат
         boolean expected = true;
 //        начало теста
@@ -89,15 +92,17 @@ class IntegerListImplTest {
     private void addInArray() {
         integerList.add(85);
         integerList.add(100);
+        integerList.add(126);
         integerList.add(20);
         integerList.add(50);
         integerList.add(95);
         integerList.add(60);
+        integerList.add(120);
         integerList.add(119);
+        integerList.add(128);
 //        integerList.add(101);
 //        integerList.add(103);
-//        integerList.add(130);
-//        integerList.add(140);
+        integerList.add(140);
 
     } private void clearInArray() {
         integerList.clear();
